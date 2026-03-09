@@ -52,7 +52,15 @@ const Navbar: React.FC<NavbarProps> = ({ navLinks }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex items-center justify-between h-full">
           <div className="flex-shrink-0 cursor-pointer">
-            <Link to="/" className="flex-shrink-0 cursor-pointer">
+            <Link to="/" className="flex items-center gap-2">
+            <div className="bg-red-600 p-2 rounded-full"> {/* Red background container */}
+      <img 
+        className="h-10 w-auto object-contain"
+        src="./resources/imgs/logo.png"
+        alt="Logo"
+      />
+    </div>
+          
                 <span className="text-2xl font-extrabold text-[var(--text-accent)]">
                   KUSFP+
                   </span>

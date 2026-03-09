@@ -8,7 +8,7 @@ import { BLOG_POSTS } from '../constants';
 const HomePage: React.FC = () => {
   return (
     <>
-      <Hero />
+      <Hero backgroundImage="./resources/imgs/background.jpeg"/>
       <ContentSlider />
       <div className="py-12 bg-[var(--background-secondary)]">
           <PageSection title="Latest Blogs">

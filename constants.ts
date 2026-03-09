@@ -4,9 +4,9 @@ export const NAV_LINKS: NavLink[] = [
   { name: 'Home', path: '/' },
   { name: 'Events', path: '/events' },
   { name: 'Educational Posts', path: '/educational-posts' },
-  { name: 'Blogs', path: '/blogs' },
-  { name: 'Boycott List', path: '/boycott' },
-  { name: 'Announcements', path: '/announcements' },
+//   { name: 'Blogs', path: '/blogs' },
+//   { name: 'Boycott List', path: '/boycott' },
+//   { name: 'Announcements', path: '/announcements' },
   { name: 'Who are we?', path: '/who-are-we' },
 ];
 
