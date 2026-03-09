@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- FONT :: Roca One -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KUSFP+ Home</title> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+      /* @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap'); */
+
+      :root {
+        --font-sans: 'Roca One', sans-serif;
+        
+        /* Brand Colors */
+        --primary: #940d0d; /* teal-600 */
+        --primary-hover: #760f0f; /* teal-700 */
+        --primary-focus-ring: #b81414; /* teal-500 */
+        
+        --secondary: #14940d; /* teal-600 */
+        --secondary-hover: #0f7618; /* teal-700 */
+        --secondary-focus-ring: #14b840; /* teal-500 */
+        
+        /* Text Colors */
+        --text-primary: #111827; /* gray-900 */
+        --text-secondary: #374151; /* gray-700 */
+        --text-muted: #4b5563; /* gray-600 */
+        --text-subtle: #6b7280; /* gray-500 */
+        --text-accent: #940d0d; /* teal-600 */
+        --text-secondary-accent: #0d9420; /* teal-600 */
+        --text-on-primary: #ffffff;
+        --text-on-secondary: #ffffff;
+        --text-on-dark: #ffffff;
+        --text-secondary-on-dark: #d1d5db; /* gray-300 */
+        --text-on-accent: #780404; /* teal-800 */
+        --primary-on-dark: #d42d2d; /* teal-400 */
+        --primary-lighter-on-dark: #f69999; /* teal-200 */
+        --secondary-on-dark: #2dd446; /* teal-400 */
+        --secondary-lighter-on-dark: #99f6a1; /* teal-200 */
+
+        /* Background Colors */
+        --background-primary: #f9fafb; /* gray-50 */
+        --background-secondary: #ffffff; /* white */
+        --background-tertiary: #f3f4f6; /* gray-100 */
+        --background-hover: #f3f4f6; /* gray-100 */
+        --background-card: #ffffff;
+        --background-input: #e5e7eb; /* gray-200 */
+        --background-input-hover: #d1d5db; /* gray-300 */
+        --accent-bg: #ccfbf1; /* teal-100 */
+        --accent-bg-text: #760f0f; /* teal-700 */
+
+        /* Border Colors */
+        --border-primary: #e5e7eb; /* gray-200 */
+
+        /* Hero/Dark Background Specific */
+        --hero-bg-from: #111827;
+        --hero-bg-to: #1f2937;
+        --button-secondary-bg: #374151;
+        --button-secondary-hover-bg: #4b5563;
+        
+        /* Misc */
+        --overlay: rgba(0,0,0,0.7);
+        --dialog-overlay: rgba(0, 0, 0, 0.85);
+      }
+
+      html[data-theme='dark'] {
+        --primary: #2dd4bf; /* teal-400 */
+        --primary-hover: #5eead4; /* teal-300 */
+        --primary-focus-ring: #2dd4bf; /* teal-400 */
+        
+        --text-primary: #f9fafb; /* gray-50 */
+        --text-secondary: #d1d5db; /* gray-300 */
+        --text-muted: #9ca3af; /* gray-400 */
+        --text-subtle: #9ca3af; /* gray-400 */
+        --text-accent: #2dd4bf; /* teal-400 */
+        --text-on-primary: #134e4a; /* teal-950 */
+        --text-on-accent: #99f6e4; /* teal-200 */
+        --text-on-dark: #ffffff;
+        --text-secondary-on-dark: #d1d5db;
+
+        --background-primary: #111827; /* gray-900 */
+        --background-secondary: #1f2937; /* gray-800 */
+        --background-tertiary: #1f2937; /* gray-800 */
+        --background-hover: #374151; /* gray-700 */
+        --background-card: #1f2937;
+        --background-input: #374151; /* gray-700 */
+        --background-input-hover: #4b5563; /* gray-600 */
+        --accent-bg: #134e4a; /* teal-900 */
+        --accent-bg-text: #5eead4; /* teal-300 */
+
+        --border-primary: #374151; /* gray-700 */
+      }
+
+      body {
+        font-family: var(--font-sans);
+        background-color: var(--background-primary);
+        color: var(--text-primary);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.23.1",
+    "react-router": "https://esm.sh/react-router@6.23.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/"
+  }
+}
+</script>
+<script>
+  (() => {
+    const getTheme = () => {
+      if (localStorage.getItem('theme')) {
+        return localStorage.getItem('theme');
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    const setTheme = (theme) => {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    }
+
+    const initialTheme = getTheme();
+    setTheme(initialTheme);
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      // Only change theme if user hasn't explicitly set one
+      if (!localStorage.getItem('theme')) {
+        setTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+
+    // Make function available globally to be called from a UI toggle if needed
+    window.toggleTheme = () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || getTheme();
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      setTheme(newTheme);
+    };
+  })();
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-[var(--background-primary)]">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
