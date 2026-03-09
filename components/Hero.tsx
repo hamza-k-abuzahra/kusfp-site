@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import backgroundImage from "../resources/imgs/background.jpeg";
 
 interface HeroProps {
 }
@@ -33,7 +34,6 @@ const Counter: React.FC<{ end: number; label: string }> = ({ end, label }) => {
 };
 
 const Hero: React.FC<HeroProps> = ({
-  backgroundImage = '/path/to/your/default-background.jpg', // Default background
   videoUrl = 'https://www.youtube.com/embed/YOUR_VIDEO_ID' // Default video
 }) => {
   return (

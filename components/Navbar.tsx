@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink as RouterNavLink } from 'react-router-dom';
 import type { NavLink } from '../types';
+import logoImage from '../resources/imgs/logo.png';
 
 interface NavbarProps {
   navLinks: NavLink[];
@@ -56,7 +57,9 @@ const Navbar: React.FC<NavbarProps> = ({ navLinks }) => {
             <div className="bg-red-600 p-2 rounded-full"> {/* Red background container */}
       <img 
         className="h-10 w-auto object-contain"
-        src="./resources/imgs/logo.png"
+        // src="./resources/imgs/logo.png"
+        // src="https://github.com/hamza-k-abuzahra/kusfp-site/blob/master/resources/imgs/logo.png"
+        src={logoImage}
         alt="Logo"
       />
     </div>
