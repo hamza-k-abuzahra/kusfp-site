@@ -10,6 +10,10 @@ export interface Slide {
   description: string;
 }
 
+export interface Image {
+  url: string; 
+  title: string;
+}
 export interface BlogPost {
   id: number;
   title: string;
@@ -47,6 +51,7 @@ export interface Event {
   category: string;
   description: string;
   imageUrl: string;
+  images: Image[];
 }
 
 export interface TeamMember {

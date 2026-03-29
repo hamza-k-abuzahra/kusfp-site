@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { EVENTS_DATA } from '../constants';
 import EventsCarousel from '../components/EventsCarousel';
 import NotFoundPage from './NotFoundPage';
+import ImageCarousel from '@/components/ImageCarousel';
 
 const EventDetailPage: React.FC = () => {
   const { eventId } = useParams<{ eventId: string }>();
@@ -59,6 +60,7 @@ const EventDetailPage: React.FC = () => {
           <div className="prose prose-lg max-w-none text-[var(--text-secondary)] leading-relaxed">
             <p>{selectedEvent.description}</p>
           </div>
+          <ImageCarousel images={selectedEvent.images}/>
         </div>
       </div>
       <EventsCarousel events={otherEvents} onEventClick={handleEventClick} />

@@ -8,6 +8,8 @@ export const NAV_LINKS: NavLink[] = [
 //   { name: 'Boycott List', path: '/boycott' },
 //   { name: 'Announcements', path: '/announcements' },
   { name: 'Who are we?', path: '/who-are-we' },
+  { name: 'Your Role', path: '/your-role' },
+  { name: 'Contact Us', path: '/contact'  }
 ];
 
 export const SLIDER_CONTENT: Slide[] = [
@@ -36,6 +38,54 @@ export const SLIDER_CONTENT: Slide[] = [
     description: 'Read our latest analysis on how small, local efforts can create a global impact.'
   }
 ];
+
+export const ROLES_DATA = [
+  {
+    title: "As a Person",
+    description:
+      "Change begins at the individual level. Your awareness, empathy, and daily choices shape the world around you.",
+    actions: [
+      "Stay informed through reliable and diverse sources.",
+      "Engage in respectful conversations and listen to different perspectives.",
+      "Support causes you believe in through small but consistent actions.",
+      "Practice critical thinking and question misinformation.",
+    ],
+  },
+  {
+    title: "As a Member of This Community",
+    description:
+      "Being part of a community means amplifying impact through collaboration and shared purpose.",
+    actions: [
+      "Participate in discussions and share valuable insights.",
+      "Help spread awareness by sharing content responsibly.",
+      "Support fellow members and encourage constructive dialogue.",
+      "Contribute ideas and initiatives to grow the movement.",
+    ],
+  },
+  {
+    title: "As a Student",
+    description:
+      "Students are in a unique position to learn, question, and influence future systems and ideas.",
+    actions: [
+      "Use academic resources to deepen your understanding of key issues.",
+      "Organize or join student-led initiatives and discussions.",
+      "Engage with professors and peers on important topics.",
+      "Leverage your environment to create awareness and dialogue.",
+    ],
+  },
+  {
+    title: "As a Student in Türkiye",
+    description:
+      "Students in Türkiye navigate a unique social and political environment that requires awareness, responsibility, and thoughtful engagement.",
+    actions: [
+      "Stay informed about local issues and policies affecting students.",
+      "Respect laws and regulations while advocating for change.",
+      "Engage in peaceful and constructive forms of expression.",
+      "Build networks with like-minded individuals and organizations.",
+    ],
+  },
+];
+
 
 export const BLOG_POSTS: BlogPost[] = [
     {
@@ -130,16 +180,17 @@ export const BOYCOTT_LIST: BoycottItem[] = [
     }
 ];
 
-export const EVENTS_DATA: Event[] = [
+export const UPCOMING_EVENTS_DATA: Event[] = [
     {
         id: 1,
-        title: "Community Town Hall: Our Path Forward",
+        title: "Community h Hall: Our Path Forward",
         date: "November 15, 2023",
         time: "7:00 PM - 9:00 PM",
         location: "City Central Auditorium",
         category: "Community Meeting",
         description: "Join us for a vital town hall meeting to discuss our community's strategy for the upcoming year. This is a platform for open dialogue, where your voice can directly shape our collective actions. We will cover recent successes, current challenges, and opportunities for grassroots involvement. Guest speakers include local leaders and seasoned activists.",
-        imageUrl: "https://picsum.photos/1200/800?random=31"
+        imageUrl: "https://picsum.photos/1200/800?random=31",
+        images: []
     },
     {
         id: 2,
@@ -149,7 +200,8 @@ export const EVENTS_DATA: Event[] = [
         location: "Starts at Parliament Square",
         category: "Protest",
         description: "A peaceful demonstration to demand accountability and justice on a global scale. We will march in solidarity with oppressed communities worldwide. Please bring signs, water, and a commitment to non-violence. Let's make our unified presence felt and send a clear message to world leaders.",
-        imageUrl: "https://picsum.photos/1200/800?random=32"
+        imageUrl: "https://picsum.photos/1200/800?random=32",
+        images: []
     },
     {
         id: 3,
@@ -159,7 +211,8 @@ export const EVENTS_DATA: Event[] = [
         location: "Online via Zoom",
         category: "Workshop",
         description: "An essential online workshop led by legal experts, designed to educate activists and community members on their rights during protests and public gatherings. This session will cover legal precedents, de-escalation techniques, and what to do if you are detained. Registration is required to receive the Zoom link.",
-        imageUrl: "https://picsum.photos/1200/800?random=33"
+        imageUrl: "https://picsum.photos/1200/800?random=33",
+        images: []
     },
     {
         id: 4,
@@ -169,7 +222,59 @@ export const EVENTS_DATA: Event[] = [
         location: "The Grand Ballroom",
         category: "Fundraiser",
         description: "Our annual fundraising gala is the cornerstone of our financial support. Join us for an inspiring evening featuring a keynote speech, silent auction, and live performances. All proceeds go directly towards funding our advocacy campaigns and community support programs for the next year.",
-        imageUrl: "https://picsum.photos/1200/800?random=34"
+        imageUrl: "https://picsum.photos/1200/800?random=34", 
+        images: []
+    }
+];
+
+export const EVENTS_DATA: Event[] = [
+    {
+        id: 1,
+        title: "Community Town Hall: Our Path Forward",
+        date: "November 15, 2023",
+        time: "7:00 PM - 9:00 PM",
+        location: "City Central Auditorium",
+        category: "Community Meeting",
+        description: "Join us for a vital town hall meeting to discuss our community's strategy for the upcoming year. This is a platform for open dialogue, where your voice can directly shape our collective actions. We will cover recent successes, current challenges, and opportunities for grassroots involvement. Guest speakers include local leaders and seasoned activists.",
+        imageUrl: "https://picsum.photos/1200/800?random=31",
+        images: []
+    },
+    {
+        id: 2,
+        title: "Peaceful March for Global Justice",
+        date: "November 25, 2023",
+        time: "1:00 PM",
+        location: "Starts at Parliament Square",
+        category: "Protest",
+        description: "A peaceful demonstration to demand accountability and justice on a global scale. We will march in solidarity with oppressed communities worldwide. Please bring signs, water, and a commitment to non-violence. Let's make our unified presence felt and send a clear message to world leaders.",
+        imageUrl: "https://picsum.photos/1200/800?random=32",
+        images: []
+    },
+    {
+        id: 3,
+        title: "Workshop: Know Your Rights",
+        date: "December 2, 2023",
+        time: "10:00 AM - 1:00 PM",
+        location: "Online via Zoom",
+        category: "Workshop",
+        description: "An essential online workshop led by legal experts, designed to educate activists and community members on their rights during protests and public gatherings. This session will cover legal precedents, de-escalation techniques, and what to do if you are detained. Registration is required to receive the Zoom link.",
+        imageUrl: "https://picsum.photos/1200/800?random=33",
+        images: []
+    },
+    {
+        id: 4,
+        title: "Fundraising Gala: An Evening of Hope",
+        date: "December 9, 2023",
+        time: "6:30 PM",
+        location: "The Grand Ballroom",
+        category: "Fundraiser",
+        description: "Our annual fundraising gala is the cornerstone of our financial support. Join us for an inspiring evening featuring a keynote speech, silent auction, and live performances. All proceeds go directly towards funding our advocacy campaigns and community support programs for the next year.",
+        imageUrl: "https://picsum.photos/1200/800?random=34",
+        images: [
+            {url:  "https://picsum.photos/1200/800?random=34", title: "test"},
+            {url:  "https://picsum.photos/1200/800?random=34", title: "test"},
+            {url:  "https://picsum.photos/1200/800?random=34", title: "test"},
+        ]
     }
 ];
 

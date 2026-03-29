@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
       <Hero backgroundImage="./resources/imgs/background.jpeg"/>
       <ContentSlider />
       <div className="py-12 bg-[var(--background-secondary)]">
-          <PageSection title="Latest Blogs">
+          <PageSection title="Latest">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {BLOG_POSTS.slice(0,3).map(post => (
                       <Link key={post.id} to={`/blogs/${post.id}`} className="bg-[var(--background-card)] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col cursor-pointer group">

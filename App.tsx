@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import ReactGA from "react-ga4";
 
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
@@ -14,7 +15,10 @@ import DonationPage from './pages/DonationPage';
 import BlogsListPage from './pages/BlogsListPage';
 import BlogDetailPage from './pages/BlogDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
+import ContactPage from './pages/ContactPage';
+import YourRolePage from './pages/YourRolePage';
 
+ReactGA.initialize("G-QVR9KJC58S");
 const App: React.FC = () => {
   return (
     <Routes>
@@ -30,6 +34,8 @@ const App: React.FC = () => {
         <Route path="blogs" element={<BlogsListPage />} />
         <Route path="blogs/:blogId" element={<BlogDetailPage />} />
         <Route path="donation" element={<DonationPage />} />
+        <Route path="contact" element={<ContactPage/>} />
+        <Route path="your-role" element={<YourRolePage/>} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

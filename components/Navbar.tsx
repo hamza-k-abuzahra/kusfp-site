@@ -112,7 +112,7 @@ const Navbar: React.FC<NavbarProps> = ({ navLinks }) => {
 
       {isMenuOpen && (
         <div className="md:hidden" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[var(--background-secondary)]">
             {navLinks.map((link) => (
               <RouterNavLink
                 key={link.name}
