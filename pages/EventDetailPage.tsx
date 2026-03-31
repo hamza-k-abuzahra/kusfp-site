@@ -69,7 +69,7 @@ const EventDetailPage: React.FC = () => {
           <ImageCarousel images={selectedEvent.images}/>
         </div>
       </div>
-      <EventsCarousel events={otherEvents} onEventClick={handleEventClick} />
+      {/* <EventsCarousel events={otherEvents} onEventClick={handleEventClick} /> */}
     </>
   );
 };

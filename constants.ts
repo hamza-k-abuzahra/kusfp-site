@@ -249,7 +249,7 @@ export const EVENTS_DATA: Event[] = [
         images: [
           {url: iftar1, title: ""}, 
           {url: iftar2, title: ""}, 
-          {url: iftar3, title: ""}, 
+          // {url: iftar3, title: ""}, 
           // {url: dec4, title: ""}, 
       ]
     },
