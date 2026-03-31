@@ -10,7 +10,7 @@ const HomePage: React.FC = () => {
     <>
       <Hero backgroundImage="./resources/imgs/background.jpeg"/>
       <ContentSlider />
-      <div className="py-12 bg-[var(--background-secondary)]">
+      {/* <div className="py-12 bg-[var(--background-secondary)]">
           <PageSection title="Latest">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {BLOG_POSTS.slice(0,3).map(post => (
@@ -26,7 +26,7 @@ const HomePage: React.FC = () => {
                   ))}
               </div>
           </PageSection>
-      </div>
+      </div> */}
     </>
   );
 };

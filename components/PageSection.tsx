@@ -7,7 +7,7 @@ interface PageSectionProps {
 
 const PageSection: React.FC<PageSectionProps> = ({ title, children }) => {
   return (
-    <div className="bg-[var(--background-primary)] py-24">
+    <div className="bg-[var(--background-primary)] pt-24 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold text-[var(--text-primary)] sm:text-5xl">{title}</h2>

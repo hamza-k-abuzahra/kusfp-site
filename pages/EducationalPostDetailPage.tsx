@@ -26,7 +26,7 @@ const EducationalPostDetailPage: React.FC = () => {
 
   return (
     <>
-      <div className="bg-[var(--background-primary)] py-12 sm:py-16">
+      <div className="bg-[var(--background-primary)] py-24 sm:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link to="/educational-posts" className="mb-8 text-[var(--text-accent)] hover:underline font-semibold flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" /></svg>

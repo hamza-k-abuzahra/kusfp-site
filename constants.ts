@@ -1,5 +1,25 @@
 import type { NavLink, Slide, BlogPost, Announcement, BoycottItem, Event, TeamMember } from './types';
 
+import dec1 from './resources/imgs/dec-1.jpg';
+import dec2 from './resources/imgs/dec-2.jpg';
+import dec3 from './resources/imgs/dec-3.jpg';
+import dec4 from './resources/imgs/dec-4.jpg';
+import flot1 from './resources/imgs/flot-1.jpg';
+import flot2 from './resources/imgs/flot-2.jpg';
+import flot3 from './resources/imgs/flot-3.jpg';
+import flot4 from './resources/imgs/flot-4.jpg';
+import farha1 from './resources/imgs/farha-1.jpeg';
+import farha2 from './resources/imgs/farha-2.jpeg';
+import farha3 from './resources/imgs/farha-3.jpeg';
+import farha4 from './resources/imgs/farha-4.jpeg';
+import iftar1 from './resources/imgs/iftar-1.jpg';
+import iftar2 from './resources/imgs/iftar-2.jpg';
+import iftar3 from './resources/imgs/iftar-3.jpg';
+import meet1 from './resources/imgs/meet-1.jpg';
+import trib1 from './resources/imgs/tribunal-1.jpg';
+
+
+
 export const NAV_LINKS: NavLink[] = [
   { name: 'Home', path: '/' },
   { name: 'Events', path: '/events' },
@@ -7,36 +27,36 @@ export const NAV_LINKS: NavLink[] = [
 //   { name: 'Blogs', path: '/blogs' },
 //   { name: 'Boycott List', path: '/boycott' },
 //   { name: 'Announcements', path: '/announcements' },
-  { name: 'Who are we?', path: '/who-are-we' },
-  { name: 'Your Role', path: '/your-role' },
-  { name: 'Contact Us', path: '/contact'  }
+  // { name: 'Who are we?', path: '/who-are-we' },
+  // { name: 'Your Role', path: '/your-role' },
+  { name: 'Connect', path: '/contact'  }
 ];
 
 export const SLIDER_CONTENT: Slide[] = [
   {
     id: 1,
-    imageUrl: 'https://picsum.photos/1200/600?random=1',
-    title: 'Upcoming Peaceful Protest',
-    description: 'Join us this Saturday for a peaceful demonstration for change. Your voice matters.'
+    imageUrl: iftar2,
+    title: 'KUSFP+ Iftar at Koç',
+    description: 'Moments from our iftar together this Ramadan!'
   },
   {
     id: 2,
-    imageUrl: 'https://picsum.photos/1200/600?random=2',
-    title: 'Educational Webinar Series',
-    description: 'Our new webinar series breaks down complex issues into understandable actions. First session on Tuesday.'
+    imageUrl: meet1,
+    title: 'Meet KUSFP+ at Koç',
+    description: 'Throwback to our time together at the start of the academic year!'
   },
   {
     id: 3,
-    imageUrl: 'https://picsum.photos/1200/600?random=3',
-    title: 'Community Support Drive',
-    description: 'We are collecting donations and supplies for affected families. Find out how you can help.'
+    imageUrl: trib1,
+    title: 'The Gaza Tribunal',
+    description: 'Our participation in the Gaza Tribunal at Istanbul University.'
   },
-  {
-    id: 4,
-    imageUrl: 'https://picsum.photos/1200/600?random=4',
-    title: 'New Blog Post: The Power of Local Action',
-    description: 'Read our latest analysis on how small, local efforts can create a global impact.'
-  }
+  // {
+  //   id: 4,
+  //   imageUrl: 'https://picsum.photos/1200/600?random=4',
+  //   title: 'New Blog Post: The Power of Local Action',
+  //   description: 'Read our latest analysis on how small, local efforts can create a global impact.'
+  // }
 ];
 
 export const ROLES_DATA = [
@@ -182,98 +202,112 @@ export const BOYCOTT_LIST: BoycottItem[] = [
 
 export const UPCOMING_EVENTS_DATA: Event[] = [
     {
-        id: 1,
-        title: "Community h Hall: Our Path Forward",
-        date: "November 15, 2023",
-        time: "7:00 PM - 9:00 PM",
-        location: "City Central Auditorium",
-        category: "Community Meeting",
-        description: "Join us for a vital town hall meeting to discuss our community's strategy for the upcoming year. This is a platform for open dialogue, where your voice can directly shape our collective actions. We will cover recent successes, current challenges, and opportunities for grassroots involvement. Guest speakers include local leaders and seasoned activists.",
-        imageUrl: "https://picsum.photos/1200/800?random=31",
+        id: 5,
+        title: "Kashmir Seminar",
+        date: "TBD",
+        time: "TBD",
+        location: "TBD",
+        category: "Seminar",
+        description: "Coming soon...",
+        imageUrl: "https://img.freepik.com/free-vector/red-grunge-style-coming-soon-design_1017-26691.jpg?semt=ais_incoming&w=740&q=80",
         images: []
     },
     {
-        id: 2,
-        title: "Peaceful March for Global Justice",
-        date: "November 25, 2023",
-        time: "1:00 PM",
-        location: "Starts at Parliament Square",
-        category: "Protest",
-        description: "A peaceful demonstration to demand accountability and justice on a global scale. We will march in solidarity with oppressed communities worldwide. Please bring signs, water, and a commitment to non-violence. Let's make our unified presence felt and send a clear message to world leaders.",
-        imageUrl: "https://picsum.photos/1200/800?random=32",
+        id: 6,
+        title: "The Power of Student Seminar",
+        date: "TBD",
+        time: "TBD",
+        location: "TBD",
+        category: "Seminar",
+        description: "Coming soon...",
+        imageUrl: "https://img.freepik.com/free-vector/red-grunge-style-coming-soon-design_1017-26691.jpg?semt=ais_incoming&w=740&q=80",
         images: []
     },
     {
-        id: 3,
-        title: "Workshop: Know Your Rights",
-        date: "December 2, 2023",
-        time: "10:00 AM - 1:00 PM",
-        location: "Online via Zoom",
-        category: "Workshop",
-        description: "An essential online workshop led by legal experts, designed to educate activists and community members on their rights during protests and public gatherings. This session will cover legal precedents, de-escalation techniques, and what to do if you are detained. Registration is required to receive the Zoom link.",
-        imageUrl: "https://picsum.photos/1200/800?random=33",
+        id: 7,
+        title: "BDS Seminar",
+        date: "TBD",
+        time: "TBD",
+        location: "TBD",
+        category: "Seminar - Campiagn",
+        description: "Coming soon...",
+        imageUrl: "https://img.freepik.com/free-vector/red-grunge-style-coming-soon-design_1017-26691.jpg?semt=ais_incoming&w=740&q=80",
         images: []
     },
-    {
-        id: 4,
-        title: "Fundraising Gala: An Evening of Hope",
-        date: "December 9, 2023",
-        time: "6:30 PM",
-        location: "The Grand Ballroom",
-        category: "Fundraiser",
-        description: "Our annual fundraising gala is the cornerstone of our financial support. Join us for an inspiring evening featuring a keynote speech, silent auction, and live performances. All proceeds go directly towards funding our advocacy campaigns and community support programs for the next year.",
-        imageUrl: "https://picsum.photos/1200/800?random=34", 
-        images: []
-    }
 ];
 
 export const EVENTS_DATA: Event[] = [
     {
-        id: 1,
-        title: "Community Town Hall: Our Path Forward",
-        date: "November 15, 2023",
-        time: "7:00 PM - 9:00 PM",
-        location: "City Central Auditorium",
-        category: "Community Meeting",
-        description: "Join us for a vital town hall meeting to discuss our community's strategy for the upcoming year. This is a platform for open dialogue, where your voice can directly shape our collective actions. We will cover recent successes, current challenges, and opportunities for grassroots involvement. Guest speakers include local leaders and seasoned activists.",
-        imageUrl: "https://picsum.photos/1200/800?random=31",
-        images: []
+        id: 8,
+        title: "Under the Olive Tree: KUSFP+ Iftar at Koç",
+        date: "February 25, 2026",
+        time: "18:50",
+        location: "Koç University - Winter Garden",
+        category: "Community",
+        description: "An evening of community, connection, and solidarity at this year's KUSFP+ Iftar. We break our fast together, play a fun and interactive Spy game, and enjoy henna throughout the night! More than just a meal, it's a moment to agather, reflect, and stand together.",
+        imageUrl: iftar3,
+        images: [
+          {url: iftar1, title: ""}, 
+          {url: iftar2, title: ""}, 
+          {url: iftar3, title: ""}, 
+          // {url: dec4, title: ""}, 
+      ]
     },
     {
-        id: 2,
-        title: "Peaceful March for Global Justice",
-        date: "November 25, 2023",
-        time: "1:00 PM",
-        location: "Starts at Parliament Square",
-        category: "Protest",
-        description: "A peaceful demonstration to demand accountability and justice on a global scale. We will march in solidarity with oppressed communities worldwide. Please bring signs, water, and a commitment to non-violence. Let's make our unified presence felt and send a clear message to world leaders.",
-        imageUrl: "https://picsum.photos/1200/800?random=32",
-        images: []
+        id: 1,
+        title: "Decolonizing Palestine: Politics, History & Media",
+        date: "December 9, 2025",
+        time: "18:00",
+        location: "Koç University - ENG B29",
+        category: "Seminar - Panel",
+        description: "A multidisciplinary panel examining how decolonial thinking-through media, history, and international relations-challenges colonial narratives and opens new ways of understanding Palestine",
+        imageUrl: dec4,
+        images: [
+          {url: dec1, title: ""}, 
+          {url: dec2, title: ""}, 
+          {url: dec3, title: ""}, 
+          // {url: dec4, title: ""}, 
+      ]
     },
+    // {
+    //     id: 2,
+    //     title: "Filistin'de Sanat ve Yaratıcılığa Bakış",
+    //     date: "24. Kasım, 2025",
+    //     time: "18:00",
+    //     location: "Koç University - SOS Z21",
+    //     category: "Seminar",
+    //     description: "Bu kısa seminer, Filistin’deki sanatın genel bir perspektifini sunarak kültür, kimlik ve yaratıcı ifade biçimlerini ele alır. Konuşmacımız Samed Karagöz, Filistin sanatı üzerine çalışan bir küratör ve sanat uzmanı olarak deneyim ve görüşlerini paylaşacaktır.",
+    //     imageUrl: "",
+    //     images: []
+    // },
     {
         id: 3,
-        title: "Workshop: Know Your Rights",
-        date: "December 2, 2023",
-        time: "10:00 AM - 1:00 PM",
-        location: "Online via Zoom",
-        category: "Workshop",
-        description: "An essential online workshop led by legal experts, designed to educate activists and community members on their rights during protests and public gatherings. This session will cover legal precedents, de-escalation techniques, and what to do if you are detained. Registration is required to receive the Zoom link.",
-        imageUrl: "https://picsum.photos/1200/800?random=33",
-        images: []
+        title: "Screening FARHA (2021)",
+        date: "November 19, 2025",
+        time: "17:30",
+        location: "Koç University - Henry Ford",
+        category: "Movie Screening",
+        description: "Farha (2021) offers a gripping portrayal of a young girl’s survival during the Nakba, illuminating themes of displacement, resilience, and historical memory.\n\nKUSFP+ X KU Sinema  invite you to a screening, accompanied by trivia and hot drinks for an evening of collective reflection.",
+        imageUrl: farha2,
+        images: [
+            {url:  farha4, title: "test"},
+            {url:  farha1, title: "test"},
+            {url:  farha3, title: "test"},
+        ]
     },
     {
         id: 4,
-        title: "Fundraising Gala: An Evening of Hope",
-        date: "December 9, 2023",
-        time: "6:30 PM",
-        location: "The Grand Ballroom",
-        category: "Fundraiser",
-        description: "Our annual fundraising gala is the cornerstone of our financial support. Join us for an inspiring evening featuring a keynote speech, silent auction, and live performances. All proceeds go directly towards funding our advocacy campaigns and community support programs for the next year.",
-        imageUrl: "https://picsum.photos/1200/800?random=34",
+        title: "Gaza and beyond: Activism from the sumud flotilla",
+        date: "November 4, 2025",
+        time: "17:30",
+        location: "Koç University - SOS Z27",
+        category: "Seminar - Panel",
+        description: "Join us to delve into stories of resistance, solidarity, and hope — exploring how activism can transcend borders and transform the world.",
+        imageUrl: flot1,
         images: [
-            {url:  "https://picsum.photos/1200/800?random=34", title: "test"},
-            {url:  "https://picsum.photos/1200/800?random=34", title: "test"},
-            {url:  "https://picsum.photos/1200/800?random=34", title: "test"},
+            {url:  flot2, title: "test"},
+            {url:  flot3, title: "test"},
+            {url:  flot4, title: "test"},
         ]
     }
 ];

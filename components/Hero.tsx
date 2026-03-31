@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({
       className="relative flex items-center justify-center"
 
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${backgroundImage}')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url('${backgroundImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         // backgroundAttachment: 'fixed'
@@ -61,17 +61,17 @@ const Hero: React.FC<HeroProps> = ({
               A justice-oriented community where students develop political consciousness and take meaningful action. Starting with Palestine, extending to all struggles for justice.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-start gap-4">
-              <Link to="/who-are-we" className="w-full sm:w-auto bg-[var(--primary)] text-[var(--text-on-primary)] font-bold py-3 px-8 rounded-lg hover:bg-[var(--primary-hover)] transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
+              <Link to="/contact" className="w-full sm:w-auto bg-[var(--primary)] text-[var(--text-on-primary)] font-bold py-3 px-8 rounded-lg hover:bg-[var(--primary-hover)] transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
                 Join the Community
               </Link>
-              <Link to="/donation" className="w-full sm:w-auto bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
+              {/* <Link to="/donation" className="w-full sm:w-auto bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
                 What is Your Role?
-              </Link>
+              </Link> */}
             </div>
           </div>
 
           {/* Right Column - Promo Video */}
-          <div className="relative">
+          {/* <div className="relative">
             <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl">
               <iframe
                 src={videoUrl}
@@ -81,7 +81,7 @@ const Hero: React.FC<HeroProps> = ({
                 className="w-full h-full"
               ></iframe>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

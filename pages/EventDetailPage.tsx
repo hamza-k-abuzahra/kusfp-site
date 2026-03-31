@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { EVENTS_DATA } from '../constants';
+import { EVENTS_DATA, UPCOMING_EVENTS_DATA } from '../constants';
 import EventsCarousel from '../components/EventsCarousel';
 import NotFoundPage from './NotFoundPage';
 import ImageCarousel from '@/components/ImageCarousel';
@@ -13,13 +13,19 @@ const EventDetailPage: React.FC = () => {
     window.scrollTo(0, 0);
   }, [eventId]);
 
-  const selectedEvent = eventId ? EVENTS_DATA.find(e => e.id === parseInt(eventId, 10)) : null;
+  let selectedEvent = eventId ? EVENTS_DATA.find(e => e.id === parseInt(eventId, 10)) : null;
+  let upcoming = false;
+  
 
   if (!selectedEvent) {
-    return <NotFoundPage />;
+    selectedEvent = eventId ? UPCOMING_EVENTS_DATA.find(e=> e.id === parseInt(eventId, 10)) : null;
+    upcoming = true;
+    if (!selectedEvent) {
+      return <NotFoundPage />;
+    }
   }
 
-  const otherEvents = EVENTS_DATA.filter(e => e.id !== selectedEvent.id);
+  const otherEvents = upcoming? UPCOMING_EVENTS_DATA.filter(e=> e.id !== selectedEvent.id) : EVENTS_DATA.filter(e => e.id !== selectedEvent.id);
 
   const handleEventClick = (id: number) => {
     navigate(`/events/${id}`);
@@ -27,7 +33,7 @@ const EventDetailPage: React.FC = () => {
 
   return (
     <>
-      <div className="bg-[var(--background-primary)] py-12 sm:py-16">
+      <div className="bg-[var(--background-primary)] py-24 sm:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link to="/events" className="mb-8 text-[var(--text-accent)] hover:underline font-semibold flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" /></svg>

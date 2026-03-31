@@ -18,7 +18,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import ContactPage from './pages/ContactPage';
 import YourRolePage from './pages/YourRolePage';
 
-ReactGA.initialize("G-QVR9KJC58S");
+ReactGA.initialize("G-0WQ1H6QFZT");
 const App: React.FC = () => {
   return (
     <Routes>

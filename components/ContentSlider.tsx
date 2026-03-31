@@ -31,7 +31,7 @@ const ContentSlider: React.FC = () => {
               {SLIDER_CONTENT.map((slide: Slide) => (
                 <div key={slide.id} className="w-full h-full flex-shrink-0 relative">
                   <img src={slide.imageUrl} alt={slide.title} className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-black/50 flex items-end p-8">
+                  <div className="absolute inset-0 bg-black/20 flex items-end p-8">
                     <div className="text-white max-w-2xl">
                       <h3 className="text-3xl md:text-4xl font-bold">{slide.title}</h3>
                       <p className="mt-2 text-lg">{slide.description}</p>

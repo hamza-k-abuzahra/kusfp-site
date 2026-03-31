@@ -64,12 +64,12 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, title = "Images f
                   {images.map((image: Image) => (
                     <div className="w-full h-full flex-shrink-0 relative">
                       <img src={image.url} alt={image.title} className="w-full h-full object-cover" />
-                      <div className="absolute inset-0 bg-black/50 flex items-end p-8">
+                      {/* <div className="absolute inset-0 bg-black/50 flex items-end p-8"> */}
                         <div className="text-white max-w-2xl">
                           {/* <h3 className="text-3xl md:text-4xl font-bold">{image.title}</h3> */}
                           {/* <p className="mt-2 text-lg">{slide.description}</p> */}
                         </div>
-                      </div>
+                      {/* </div> */}
                     </div>
                   ))}
                 </div>
