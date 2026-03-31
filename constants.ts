@@ -33,12 +33,12 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const SLIDER_CONTENT: Slide[] = [
-  {
-    id: 1,
-    imageUrl: iftar2,
-    title: 'KUSFP+ Iftar at Koç',
-    description: 'Moments from our iftar together this Ramadan!'
-  },
+  // {
+  //   id: 1,
+  //   imageUrl: iftar2,
+  //   title: 'KUSFP+ Iftar at Koç',
+  //   description: 'Moments from our iftar together this Ramadan!'
+  // },
   {
     id: 2,
     imageUrl: meet1,
@@ -237,22 +237,22 @@ export const UPCOMING_EVENTS_DATA: Event[] = [
 ];
 
 export const EVENTS_DATA: Event[] = [
-    {
-        id: 8,
-        title: "Under the Olive Tree: KUSFP+ Iftar at Koç",
-        date: "February 25, 2026",
-        time: "18:50",
-        location: "Koç University - Winter Garden",
-        category: "Community",
-        description: "An evening of community, connection, and solidarity at this year's KUSFP+ Iftar. We break our fast together, play a fun and interactive Spy game, and enjoy henna throughout the night! More than just a meal, it's a moment to agather, reflect, and stand together.",
-        imageUrl: iftar3,
-        images: [
-          {url: iftar1, title: ""}, 
-          {url: iftar2, title: ""}, 
-          // {url: iftar3, title: ""}, 
-          // {url: dec4, title: ""}, 
-      ]
-    },
+    // {
+    //     id: 8,
+    //     title: "Under the Olive Tree: KUSFP+ Iftar at Koç",
+    //     date: "February 25, 2026",
+    //     time: "18:50",
+    //     location: "Koç University - Winter Garden",
+    //     category: "Community",
+    //     description: "An evening of community, connection, and solidarity at this year's KUSFP+ Iftar. We break our fast together, play a fun and interactive Spy game, and enjoy henna throughout the night! More than just a meal, it's a moment to agather, reflect, and stand together.",
+    //     imageUrl: iftar3,
+    //     images: [
+    //       {url: iftar1, title: ""}, 
+    //       {url: iftar2, title: ""}, 
+    //       // {url: iftar3, title: ""}, 
+    //       // {url: dec4, title: ""}, 
+    //   ]
+    // },
     {
         id: 1,
         title: "Decolonizing Palestine: Politics, History & Media",
