@@ -12,9 +12,9 @@ import farha1 from './resources/imgs/farha-1.jpeg';
 import farha2 from './resources/imgs/farha-2.jpeg';
 import farha3 from './resources/imgs/farha-3.jpeg';
 import farha4 from './resources/imgs/farha-4.jpeg';
-import iftar1 from './resources/imgs/iftar-1.jpg';
-import iftar2 from './resources/imgs/iftar-2.jpg';
-import iftar3 from './resources/imgs/iftar-3.jpg';
+import iftar1 from './resources/imgs/ift-1.jpg';
+import iftar2 from './resources/imgs/ift-2.jpg';
+import iftar3 from './resources/imgs/ift-3.jpg';
 import meet1 from './resources/imgs/meet-1.jpg';
 import trib1 from './resources/imgs/tribunal-1.jpg';
 
