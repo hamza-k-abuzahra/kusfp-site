@@ -120,7 +120,7 @@ export const BLOG_POSTS: TranslatedBlog[] = [
           en: {
             title: "How American Imperialism has Shaped the Middle East: From Palestine to Iran",
             author: "Layla Şahin", // KUSFP+ team?
-            date: "April 1, 2026",
+            date: "April 2, 2026",
             category: "Parallels",
             excerpt: "American imperialism overthrew Iran's Mossadeq in 1953 and enabled Israel's occupation of Palestine, prioritizing its own interests over self-determination in both cases.",
             content: [
@@ -160,8 +160,8 @@ export const BLOG_POSTS: TranslatedBlog[] = [
           }, 
         tr:{
             title: "Amerikan Emperyalizmi Orta Doğu’yu Nasıl Şekillendirdi: Filistin’den İran’a",
-            author: "Layla Şahin", // KUSFP+ team?
-            date: "Nisan 1, 2026",
+            author: "Maryam Sohaib & Layla Şahin", // KUSFP+ team?
+            date: "Nisan 2, 2026",
             category: "Benzerlikler",
             excerpt: "Amerikan emperyalizmi, 1953'te İran'ın Musaddık'ını devirdiği gibi Filistin'in işgaline de destek vererek her iki durumda da kendi çıkarlarını halkların kendi kaderini tayin hakkının önüne koymuştur.",
             content: [
@@ -190,6 +190,13 @@ export const BLOG_POSTS: TranslatedBlog[] = [
               { type: 'paragraph', text: "Güncel olayların tarihsel ve jeopolitik bağlamını anlamak yalnızca kişiye değil, çevresindeki insanlara da yardımcı olur; çünkü bu farkındalık gündelik tartışmalar ve sohbetler yoluyla başkalarına da aktarılır. Böylece baskın medya anlatıları tarafından kolayca yönlendirilemeyen insanların sayısı artar. Herkesin atabileceği bir diğer adım da tükettiği medya içerikleri konusunda daha bilinçli olmaktır. Mümkün olduğunca nesnel kalmaya çalışmak, olguları, üstesinden gelinmesi gereken aynı emperyalist anlatılara yaslanmadan aktaran kaynakları okumak, izlemek ve dinlemek kişinin ve toplumun bilincinin temiz kalmasını sağlar"},
               { type: 'image', src: iran8, caption: ""},   
               { type: 'paragraph', text: "Ve son olarak, belki de en önemlisi: Harcamaları, Filistin gibi Amerikan müdahalelerinden etkilenen ulusların sömürülmesine ve baskı altına alınmasına ortak olan çok uluslu şirketler yerine, yerel markalardan ve etik şirketlerden yana kullanmak önemlidir. BDS (Boykot, Yatırımların Geri Çekilmesi ve Yaptırımlar) gibi boykot hareketleri bu alandaki çalışmalarıyla geniş çapta dikkat ve takdir toplamıştır. Paranın nereye ve kime harcandığına dikkat edilmelidir. Böylece herkes, ne kadar küçük olursa olsun, değişim yaratma gücü kazanabilir."},
+              { type: 'references', items: [
+                {text: "", url: "https://ramigkhouri.substack.com/p/has-the-iran-vs-israelus-war-enhanced"},
+                {text: "", url: "https://reason.com/2025/06/23/a-brief-bloody-history-of-all-the-times-the-u-s-caused-chaos-in-the-middle-east/"},
+                {text: "", url: "https://www.pbs.org/newshour/world/a-historical-timeline-of-u-s-relations-with-iran"},
+                {text: "", url: "https://www.waddingtons.ca/most-expensive-party/"},
+                {text: "", url: "https://www.thecrimson.com/article/1979/12/6/life-under-the-shah-pit-was/"},
+              ]}
             ]
           }
         }
