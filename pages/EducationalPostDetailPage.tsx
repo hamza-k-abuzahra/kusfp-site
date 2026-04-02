@@ -3,10 +3,14 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { BLOG_POSTS } from '../constants';
 import PostsCarousel from '../components/PostsCarousel';
 import NotFoundPage from './NotFoundPage';
+import { ArticleImage, ArticleList, ArticleParagraph, ArticleQuote, ArticleReferences, ArticleTitle } from '@/components/ContentComponents';
+import { ContentBlock } from '@/types';
 
 const EducationalPostDetailPage: React.FC = () => {
   const { postId } = useParams<{ postId: string }>();
   const navigate = useNavigate();
+  
+  const [lang, setLang] = React.useState<'en' | 'tr'>('en');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -18,10 +22,49 @@ const EducationalPostDetailPage: React.FC = () => {
     return <NotFoundPage />;
   }
 
-  const otherPosts = BLOG_POSTS.filter(p => p.id !== selectedPost.id);
+
+  const post = selectedPost?.translations?.[lang] || selectedPost?.translations?.en;
+
+  const otherPosts = BLOG_POSTS
+        .filter(p => p.id !== selectedPost.id)
+        .map(p =>({
+          ...p, ...p?.translations?.[lang] || p?.translations?.en
+        })
+        );
+  
 
   const handlePostClick = (id: number) => {
     navigate(`/educational-posts/${id}`);
+  };
+
+  const renderBlock = (block: ContentBlock, index: number) => {
+    switch (block.type) {
+      case 'title':
+        return <ArticleTitle >{block.text}</ArticleTitle>;
+
+      case 'paragraph':
+        return <ArticleParagraph >{block.text}</ArticleParagraph>;
+
+      case 'image':
+        return (
+          <ArticleImage
+            
+            src={block.src}
+            caption={block.caption}
+          />
+        );
+      case 'quote':
+        return <ArticleQuote >{block.text}</ArticleQuote>;
+
+      case 'list':
+        return <ArticleList  items={block.items} />;
+
+      case 'references':
+        return <ArticleReferences items={block.items} />;
+      
+        default:
+        return null;
+    }
   };
 
   return (
@@ -33,27 +76,53 @@ const EducationalPostDetailPage: React.FC = () => {
             Back to All Posts
           </Link>
           
-          <img src={selectedPost.imageUrl} alt={selectedPost.title} className="w-full h-64 md:h-96 object-cover rounded-2xl shadow-2xl mb-8"/>
           
           <div className="mb-6">
-            <span className="inline-block bg-[var(--accent-bg)] text-[var(--accent-bg-text)] text-sm font-semibold mr-2 px-3 py-1 rounded-full">{selectedPost.category}</span>
+            <span className="inline-block bg-[var(--accent-bg)] text-[var(--accent-bg-text)] text-sm font-semibold mr-2 px-3 py-1 rounded-full">{post.category}</span>
           </div>
-          
-          <h1 className="text-4xl md:text-5xl font-extrabold text-[var(--text-primary)] mb-4">{selectedPost.title}</h1>
+          <div className="flex justify-end mb-6">
+  <div className="flex bg-[var(--background-secondary)] rounded-full p-1 shadow-inner">
+    
+    <button
+      onClick={() => setLang('en')}
+      className={`px-4 py-1.5 text-sm font-semibold rounded-full transition ${
+        lang === 'en'
+          ? 'bg-[var(--primary)] text-white shadow'
+          : 'text-[var(--text-muted)] hover:text-[var(--text-primary)]'
+      }`}
+    >
+      EN
+    </button>
+
+    <button
+      onClick={() => setLang('tr')}
+      className={`px-4 py-1.5 text-sm font-semibold rounded-full transition ${
+        lang === 'tr'
+          ? 'bg-[var(--primary)] text-white shadow'
+          : 'text-[var(--text-muted)] hover:text-[var(--text-primary)]'
+      }`}
+    >
+      TR
+    </button>
+
+  </div>
+</div>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-[var(--text-primary)] mb-4">{post.title}</h1>
           
           <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center text-lg text-[var(--text-muted)] gap-x-8 gap-y-4 mb-8 border-y border-[var(--border-primary)] py-4">
             <div className="flex items-center space-x-3">
                 <svg className="w-6 h-6 text-[var(--primary)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                <span className="font-medium">{selectedPost.author}</span>
+                <span className="font-medium">{post.author}</span>
             </div>
               <div className="flex items-center space-x-3">
                 <svg className="w-6 h-6 text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                <span className="font-medium">{selectedPost.date}</span>
+                <span className="font-medium">{post.date}</span>
               </div>
           </div>
+          <img src={selectedPost.imageUrl} alt={post.title} className="w-full h-64 md:h-96 object-cover rounded-2xl shadow-2xl mb-8"/>
 
-          <div className="prose prose-lg max-w-none text-[var(--text-secondary)] leading-relaxed">
-            <p>{selectedPost.content}</p>
+          <div className="max-w-none">
+            {post.content.map((block, i) => renderBlock(block, i))}
           </div>
         </div>
       </div>

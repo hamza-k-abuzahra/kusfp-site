@@ -25,12 +25,12 @@ const EducationalPostsListPage: React.FC = () => {
             tabIndex={0}
             onKeyPress={(e) => e.key === 'Enter' && handleSelectPost(post.id)}
           >
-            <img src={post.imageUrl} alt={post.title} className="w-full h-48 object-cover"/>
+            <img src={post.imageUrl} alt={post.translations.en.title} className="w-full h-48 object-cover"/>
             <div className="p-6 flex flex-col flex-grow">
-                <p className="text-sm font-semibold text-[var(--text-accent)] uppercase">{post.category}</p>
-                <h3 className="text-xl font-bold text-[var(--text-primary)] mt-2 mb-2">{post.title}</h3>
-                <p className="text-sm text-[var(--text-subtle)] mb-3">{post.author} - {post.date}</p>
-                <p className="text-[var(--text-secondary)] mb-4 flex-grow">{post.excerpt}</p>
+                <p className="text-sm font-semibold text-[var(--text-accent)] uppercase">{post.translations.en.category}</p>
+                <h3 className="text-xl font-bold text-[var(--text-primary)] mt-2 mb-2">{post.translations.en.title}</h3>
+                <p className="text-sm text-[var(--text-subtle)] mb-3">{post.translations.en.author} - {post.translations.en.date}</p>
+                <p className="text-[var(--text-secondary)] mb-4 flex-grow">{post.translations.en.excerpt}</p>
                 <span className="font-semibold text-[var(--text-accent)] group-hover:underline mt-auto">Read More &rarr;</span>
             </div>
           </div>

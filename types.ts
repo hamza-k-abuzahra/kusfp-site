@@ -14,16 +14,38 @@ export interface Image {
   url: string; 
   title: string;
 }
-export interface BlogPost {
+
+export interface TranslatedBlog {
   id: number;
+  imageUrl: string;
+  translations: {[key: string]: BlogPost};
+}
+
+export interface BlogPost {
   title: string;
   author: string;
   date: string;
   excerpt: string;
-  imageUrl: string;
   category: string;
-  content: string;
+  content: ContentBlock[];
 }
+
+export type ContentBlock =
+  | { type: 'title'; text: string }
+  | { type: 'paragraph'; text: string }
+  | { type: 'image'; src: string; caption?: string }
+  | { type: 'quote'; text: string }
+  | { type: 'list'; items: string[] }
+  | { type: 'references'; items: { text: string; url: string }[] };
+export interface BlogContent {
+  type: string;
+  text: string;
+}
+
+export type Reference = {
+  text: string;
+  url: string;
+};
 
 export interface Announcement {
   id: number;

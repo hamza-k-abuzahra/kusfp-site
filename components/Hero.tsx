@@ -54,11 +54,11 @@ const Hero: React.FC<HeroProps> = ({
           {/* Left Column - Text Content */}
           <div className="text-left">
             <h1 className="text-4xl md:text-6xl tracking-tight leading-tight mb-4">
-              <span className="block mb-4 text-white">Learn. Organize. Act.</span>
-              <span className="block text-[var(--primary-on-dark)]">Where Action Meets Justice.</span>
+              <span className="block mb-4 text-white">Learn. Act. Organize.</span>
+              <span className="block text-[var(--primary-on-dark)]">Rooted in Palestine. Connected to global struggles for justice.</span>
             </h1>
             <p className="max-w-2xl mt-6 text-lg md:text-xl text-gray-200">
-              A justice-oriented community where students develop political consciousness and take meaningful action. Starting with Palestine, extending to all struggles for justice.
+              A justice-oriented student community building political and social awareness for collective action, on campus and beyond.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-start gap-4">
               <Link to="/contact" className="w-full sm:w-auto bg-[var(--primary)] text-[var(--text-on-primary)] font-bold py-3 px-8 rounded-lg hover:bg-[var(--primary-hover)] transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
