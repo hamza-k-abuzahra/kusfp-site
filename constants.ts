@@ -119,7 +119,7 @@ export const BLOG_POSTS: TranslatedBlog[] = [
         translations: {
           en: {
             title: "How American Imperialism has Shaped the Middle East: From Palestine to Iran",
-            author: "Layla Şahin", // KUSFP+ team?
+            author: "Maryam Sohaib & Layla Şahin", // KUSFP+ team?
             date: "April 2, 2026",
             category: "Parallels",
             excerpt: "American imperialism overthrew Iran's Mossadeq in 1953 and enabled Israel's occupation of Palestine, prioritizing its own interests over self-determination in both cases.",
