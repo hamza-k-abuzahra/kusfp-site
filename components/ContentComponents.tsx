@@ -7,6 +7,12 @@ export const ArticleTitle = ({ children }: { children: React.ReactNode }) => (
   </h2>
 );
 
+export const ArticleٍSubTitle = ({ children }: { children: React.ReactNode }) => (
+  <h3 className="text-xl md:text-xl font-bold mt-10 mb-4 text-[var(--text-primary)]">
+    {children}
+  </h3>
+);
+
 // export default ArticleTitle;
 
 export const ArticleParagraph = ({ children }: { children: React.ReactNode }) => (

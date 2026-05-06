@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { BLOG_POSTS } from '../constants';
 import PostsCarousel from '../components/PostsCarousel';
 import NotFoundPage from './NotFoundPage';
-import { ArticleImage, ArticleList, ArticleParagraph, ArticleQuote, ArticleReferences, ArticleTitle } from '@/components/ContentComponents';
+import { ArticleImage, ArticleList, ArticleParagraph, ArticleQuote, ArticleReferences, ArticleTitle, ArticleٍSubTitle } from '@/components/ContentComponents';
 import { ContentBlock } from '@/types';
 
 const EducationalPostDetailPage: React.FC = () => {
@@ -62,7 +62,10 @@ const EducationalPostDetailPage: React.FC = () => {
       case 'references':
         return <ArticleReferences items={block.items} />;
       
-        default:
+      case 'sub-title': 
+        return <ArticleٍSubTitle>{block.text}</ArticleٍSubTitle>;
+      
+      default:
         return null;
     }
   };

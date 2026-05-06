@@ -32,6 +32,7 @@ export interface BlogPost {
 
 export type ContentBlock =
   | { type: 'title'; text: string }
+  | { type: 'sub-title'; text: string }
   | { type: 'paragraph'; text: string }
   | { type: 'image'; src: string; caption?: string }
   | { type: 'quote'; text: string }
