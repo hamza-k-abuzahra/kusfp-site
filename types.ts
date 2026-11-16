@@ -51,18 +51,21 @@ export type Reference = {
 export interface Announcement {
   id: number;
   title: string;
-  date: string;
-  content: string;
+  date: string;      // write in English, e.g. "March 3, 2026"
+  content: string;   // blank line = new paragraph
+  imageUrl?: string; // optional; also used on the home page slider
+  link?: { label: string; url: string }; // optional button, e.g. a form or an event page ("/events/5")
 }
 
 export interface BoycottItem {
     id: number;
     title: string;
-    reason: string;
-    logoUrl: string;
-    details: string;
-    alternatives: string[];
-    categories: string[];
+    reason: string;                          // one or two lines shown on the card
+    logoUrl?: string;                        // optional; the brand's initials are shown if missing
+    details?: string;                        // longer explanation shown in the popup
+    alternatives: string[];                  // what to choose instead
+    categories: string[];                    // e.g. "food", "tech" (used for the filter chips)
+    sources?: { label: string; url: string }[]; // links backing up the claim
 }
 
 export interface Event {
@@ -75,12 +78,30 @@ export interface Event {
   description: string;
   imageUrl: string;
   images: Image[];
+  // Optional extras for the event page (shown only when filled in)
+  summary?: string;                              // one-line intro shown in bold above the description
+  speakers?: { name: string; role?: string }[];  // speakers / panelists / hosts
+  highlights?: string[];                         // key points, takeaways or what happened
+  reflections?: string;                          // what we took away from it (blank line = new paragraph)
+  remarks?: string;                              // closing notes, thanks, acknowledgements
+  links?: { instagram?: string; linkedin?: string }; // posts about the event; a button shows only if a link is set
 }
 
-export interface TeamMember {
-  id: number;
+export interface Team {
   name: string;
-  role: string;
-  bio: string;
-  avatarUrl: string;
+  symbol?: string;     // optional line-art symbol from the background pattern (e.g. "olive", "key", "dove")
+  description: string; // what this team does
+  roles: string[];     // positions / responsibilities in the team
+  skills: string[];    // skills that help (or that you'll learn)
+}
+export interface RoleAction {
+  text: string;
+  to?: string; // optional internal link
+}
+
+export interface Role {
+  ring: string;
+  title: string;
+  description: string;
+  actions: RoleAction[];
 }

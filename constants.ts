@@ -1,4 +1,4 @@
-import type { NavLink, Slide, BlogPost, Announcement, BoycottItem, Event, TeamMember, TranslatedBlog } from './types';
+import type { NavLink, Slide, BlogPost, Announcement, BoycottItem, Event, Team, TranslatedBlog, Role } from './types';
 
 import dec1 from './resources/imgs/dec-1.jpg';
 import dec2 from './resources/imgs/dec-2.jpg';
@@ -42,11 +42,10 @@ export const NAV_LINKS: NavLink[] = [
   { name: 'Home', path: '/' },
   { name: 'Events', path: '/events' },
   { name: 'Educational Posts', path: '/educational-posts' },
-//   { name: 'Blogs', path: '/blogs' },
-//   { name: 'Boycott List', path: '/boycott' },
-//   { name: 'Announcements', path: '/announcements' },
-// { name: 'Your Role', path: '/your-role' },
-  // { name: 'About Us', path: '/about' },
+  { name: 'Boycott', path: '/boycott' },
+  { name: 'Announcements', path: '/announcements' },
+  //   { name: 'Blogs', path: '/blogs' },
+  { name: 'About', path: '/about' },
   { name: 'Connect', path: '/contact'  }
 ];
 
@@ -77,49 +76,51 @@ export const SLIDER_CONTENT: Slide[] = [
   // }
 ];
 
-export const ROLES_DATA = [
+// Roles shown on the home page (expanding rings) and on /your-role.
+// Ordered from the individual outward. `ring` is the short label drawn on the ring.
+export const ROLES_DATA: Role[] = [
   {
+    ring: "You",
     title: "As a Person",
     description:
-      "Change begins at the individual level. Your awareness, empathy, and daily choices shape the world around you.",
+      "It starts with what you know, and what you refuse to look away from.",
     actions: [
-      "Stay informed through reliable and diverse sources.",
-      "Engage in respectful conversations and listen to different perspectives.",
-      "Support causes you believe in through small but consistent actions.",
-      "Practice critical thinking and question misinformation.",
+      { text: "Learn the history beyond the headlines", to: "/educational-posts" },
+      { text: "Check what you buy against the boycott list", to: "/boycott" },
+      { text: "Question what you're told, and share only what you've verified" },
     ],
   },
   {
+    ring: "Community",
     title: "As a Member of This Community",
     description:
-      "Being part of a community means amplifying impact through collaboration and shared purpose.",
+      "Alone we notice; together we act. A community turns care into collective action.",
     actions: [
-      "Participate in discussions and share valuable insights.",
-      "Help spread awareness by sharing content responsibly.",
-      "Support fellow members and encourage constructive dialogue.",
-      "Contribute ideas and initiatives to grow the movement.",
+      { text: "Show up to our events, and bring a friend", to: "/events" },
+      { text: "Share our posts and campaigns, responsibly and with context" },
+      { text: "Bring your ideas, skills and time", to: "/contact" },
     ],
   },
   {
+    ring: "Campus",
     title: "As a Student",
     description:
-      "Students are in a unique position to learn, question, and influence future systems and ideas.",
+      "The university is a place to learn, to question, and to be heard. Use it.",
     actions: [
-      "Use academic resources to deepen your understanding of key issues.",
-      "Organize or join student-led initiatives and discussions.",
-      "Engage with professors and peers on important topics.",
-      "Leverage your environment to create awareness and dialogue.",
+      { text: "Use academic resources to go deeper than the news cycle" },
+      { text: "Raise these issues in class, with peers and with professors" },
+      { text: "Start or join student-led initiatives", to: "/contact" },
     ],
   },
   {
+    ring: "Türkiye",
     title: "As a Student in Türkiye",
     description:
-      "Students in Türkiye navigate a unique social and political environment that requires awareness, responsibility, and thoughtful engagement.",
+      "We study in a place with its own history of solidarity, and its own realities. Engage with both, thoughtfully.",
     actions: [
-      "Stay informed about local issues and policies affecting students.",
-      "Respect laws and regulations while advocating for change.",
-      "Engage in peaceful and constructive forms of expression.",
-      "Build networks with like-minded individuals and organizations.",
+      { text: "Connect with student groups and organizations across Türkiye" },
+      { text: "Stay informed on local developments that affect students" },
+      { text: "Act peacefully and within the law, so the work can last" },
     ],
   },
 ];
@@ -491,64 +492,32 @@ export const BLOG_POSTS: TranslatedBlog[] = [
    
 ];
 
+// Announcements shown on /announcements and mixed into the home page "What's Happening" slider.
+// Newest first is not required; they are sorted by date automatically.
 export const ANNOUNCEMENTS: Announcement[] = [
-    {
-        id: 1,
-        title: "New Partnership with Global Relief Foundation",
-        date: "November 1, 2023",
-        content: "We are thrilled to announce a new partnership that will amplify our efforts and extend our reach to communities in need across the globe."
-    },
-    {
-        id: 2,
-        title: "Annual Charity Gala - Save the Date!",
-        date: "October 28, 2023",
-        content: "Our biggest fundraising event of the year is scheduled for December 15th. Get ready for an evening of inspiration and action. Tickets on sale soon."
-    },
-    {
-        id: 3,
-        title: "Volunteer Mobilization Success",
-        date: "October 25, 2023",
-        content: "A huge thank you to the 500+ new volunteers who signed up last week! Your dedication is the backbone of our movement."
-    }
+  // {
+  //   id: 1,
+  //   title: "Announcement title",
+  //   date: "March 3, 2026",
+  //   content: "What's happening, in a few sentences.",
+  //   imageUrl: someImage,                                   // optional
+  //   link: { label: "Apply now", url: "https://forms..." }, // optional
+  // },
 ];
 
+// Boycott list shown on /boycott and in the home page spotlight.
+// Copy the example below for each brand (logoUrl, details and sources are optional).
 export const BOYCOTT_LIST: BoycottItem[] = [
-    { 
-        id: 1, 
-        title: "MegaCorp Inc.", 
-        reason: "Cited for unethical labor practices and environmental damage.", 
-        logoUrl: "https://picsum.photos/200/200?random=20",
-        details: "Investigations have revealed MegaCorp Inc. utilizes sweatshops in their supply chain and has been fined multiple times for dumping industrial waste into local rivers, severely impacting ecosystems and community health.",
-        alternatives: ["EcoFriendly Goods", "FairTrade Collective"],
-        categories: ["food"]
-    },
-    { 
-        id: 2, 
-        title: "Global Beverages Co.", 
-        reason: "Involved in water source exploitation in vulnerable communities.", 
-        logoUrl: "https://picsum.photos/200/200?random=21",
-        details: "Global Beverages Co. has been criticized for privatizing public water sources in developing regions, leading to water scarcity for local populations while they bottle and sell the water at a premium.",
-        alternatives: ["Local Spring Waters", "PureSip Drinks"],
-        categories: ["food"]
-    },
-    { 
-        id: 3, 
-        title: "Fast Fashion United", 
-        reason: "Lack of transparency in supply chain and use of child labor.", 
-        logoUrl: "https://picsum.photos/200/200?random=22",
-        details: "Audits and whistleblower reports have consistently pointed to the use of child labor in factories supplying Fast Fashion United. They have failed to provide a transparent supply chain audit.",
-        alternatives: ["Sustainable Threads", "Ethical Attire"],
-        categories: ["food"]
-    },
-    { 
-        id: 4, 
-        title: "TechGiant Ltd.", 
-        reason: "Data privacy violations and suppression of user speech.", 
-        logoUrl: "https://picsum.photos/200/200?random=23",
-        details: "TechGiant Ltd. has faced numerous lawsuits regarding the unauthorized collection and sale of user data to third parties. They have also been accused of censoring content that is critical of their business partners.",
-        alternatives: ["PrivacyFirst Tech", "OpenSource Software Solutions"],
-        categories: ["food"]
-    }
+  // {
+  //   id: 1,
+  //   title: "Brand name",
+  //   reason: "One or two lines on why we boycott this brand.",
+  //   logoUrl: brandLogo,              // import the image at the top of this file, or leave out
+  //   details: "Longer explanation shown when the brand is opened.",
+  //   alternatives: ["Local alternative 1", "Local alternative 2"],
+  //   categories: ["food"],
+  //   sources: [{ label: "BDS Movement", url: "https://bdsmovement.net/..." }],
+  // },
 ];
 
 export const UPCOMING_EVENTS_DATA: Event[] = [
@@ -560,7 +529,7 @@ export const UPCOMING_EVENTS_DATA: Event[] = [
         location: "TBD",
         category: "Seminar",
         description: "Coming soon...",
-        imageUrl: "https://img.freepik.com/free-vector/red-grunge-style-coming-soon-design_1017-26691.jpg?semt=ais_incoming&w=740&q=80",
+        imageUrl: "" /* add a poster image when available */,
         images: []
     },
     {
@@ -571,7 +540,7 @@ export const UPCOMING_EVENTS_DATA: Event[] = [
         location: "TBD",
         category: "Seminar",
         description: "Coming soon...",
-        imageUrl: "https://img.freepik.com/free-vector/red-grunge-style-coming-soon-design_1017-26691.jpg?semt=ais_incoming&w=740&q=80",
+        imageUrl: "" /* add a poster image when available */,
         images: []
     },
     {
@@ -580,9 +549,9 @@ export const UPCOMING_EVENTS_DATA: Event[] = [
         date: "TBD",
         time: "TBD",
         location: "TBD",
-        category: "Seminar - Campiagn",
+        category: "Seminar - Campaign",
         description: "Coming soon...",
-        imageUrl: "https://img.freepik.com/free-vector/red-grunge-style-coming-soon-design_1017-26691.jpg?semt=ais_incoming&w=740&q=80",
+        imageUrl: "" /* add a poster image when available */,
         images: []
     },
 ];
@@ -663,33 +632,41 @@ export const EVENTS_DATA: Event[] = [
     }
 ];
 
-export const TEAM_MEMBERS: TeamMember[] = [
-    {
-        id: 1,
-        name: "Dr. Evelyn Reed",
-        role: "Founder & Lead Strategist",
-        bio: "With over 20 years of experience in social justice and community organizing, Evelyn provides the vision and strategic direction for our movement.",
-        avatarUrl: "https://picsum.photos/200/200?random=40"
-    },
-    {
-        id: 2,
-        name: "Jamal Carter",
-        role: "Community Outreach Director",
-        bio: "Jamal is the heart of our community engagement, building bridges and mobilizing support on the ground. He ensures every voice is heard.",
-        avatarUrl: "https://picsum.photos/200/200?random=41"
-    },
-    {
-        id: 3,
-        name: "Sofia Nguyen",
-        role: "Research & Policy Analyst",
-        bio: "Sofia's sharp analysis and dedication to data-driven advocacy shape our campaigns and educational materials, ensuring our actions are informed and impactful.",
-        avatarUrl: "https://picsum.photos/200/200?random=42"
-    },
-    {
-        id: 4,
-        name: "Ben O'Connell",
-        role: "Digital Campaign Manager",
-        bio: "Ben is the digital force behind our online presence, managing social media campaigns and leveraging technology to amplify our message globally.",
-        avatarUrl: "https://picsum.photos/200/200?random=43"
-    }
+// About page. DRAFT — replace the text and teams with your real ones.
+export const ABOUT_TEXT: string[] = [
+  "KUSFP+ is a justice-oriented student community at Koç University, rooted in Palestine and connected to global struggles for justice.",
+  "[Draft — write 1–2 paragraphs: how the group started, what it believes in, and what it does on campus and beyond.]",
+];
+
+// Teams shown on the About page so people know where they could join.
+// DRAFT — rename, remove or add teams to match how the group is actually organized.
+export const TEAMS: Team[] = [
+  {
+    name: "Events",
+    symbol: "dove",
+    description: "Plans and runs our seminars, panels, screenings and gatherings from idea to clean-up.",
+    roles: ["Event planning", "Speaker outreach", "Logistics & venue booking", "On-the-day coordination"],
+    skills: ["Organization", "Communication", "Working under pressure"],
+  },
+  {
+    name: "Research & Writing",
+    symbol: "olive",
+    description: "Researches and writes our educational posts, articles and event briefs.",
+    roles: ["Writing articles", "Fact-checking & sourcing", "Editing", "Translation (EN / TR)"],
+    skills: ["Research", "Writing", "Critical reading", "Languages"],
+  },
+  {
+    name: "Media & Design",
+    symbol: "anemone",
+    description: "Shapes how we look and sound: posters, social media, photography and video.",
+    roles: ["Graphic design", "Social media", "Photography & video", "Website"],
+    skills: ["Design tools", "Photo / video editing", "Storytelling"],
+  },
+  {
+    name: "Outreach & Campaigns",
+    symbol: "key",
+    description: "Builds connections with other groups and runs campaigns like the boycott.",
+    roles: ["Campaign planning", "Partnerships with other groups", "Boycott list upkeep", "Tabling on campus"],
+    skills: ["Networking", "Persuasion", "Persistence"],
+  },
 ];
