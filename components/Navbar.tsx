@@ -93,7 +93,7 @@ const Navbar: React.FC<NavbarProps> = ({ navLinks }) => {
               type="button"
               className="inline-flex items-center justify-center p-2 rounded-lg text-[#3b2f22] hover:bg-[rgba(74,58,40,0.08)] focus:outline-none focus:ring-2 focus:ring-[#940d0d]/40"
               aria-controls="mobile-menu"
-              aria-expanded="false"
+              aria-expanded={isMenuOpen}
             >
               <span className="sr-only">Open main menu</span>
               {isMenuOpen ? (
@@ -111,8 +111,8 @@ const Navbar: React.FC<NavbarProps> = ({ navLinks }) => {
       </div>
 
       {isMenuOpen && (
-        <div className="lg:hidden" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-[rgba(74,58,40,0.10)]">
+        <div className="lg:hidden absolute left-0 right-0 top-full max-h-[calc(100vh-5rem)] overflow-y-auto bg-[#f3ebdd] border-b border-[rgba(74,58,40,0.15)] shadow-[0_16px_32px_rgba(74,58,40,0.18)]" id="mobile-menu">
+          <div className="max-w-7xl mx-auto px-4 pt-3 pb-4 space-y-1 sm:px-6 border-t border-[rgba(74,58,40,0.10)]">
             {navLinks.map((link) => (
               <RouterNavLink
                 key={link.name}
