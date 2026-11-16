@@ -24,7 +24,7 @@ const YourRolePage: React.FC = () => {
           {ROLES_DATA.map((role, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg"
+              className="bg-white p-8 rounded-2xl shadow-lg"
             >
               <h3 className="text-2xl font-bold text-[var(--text-primary)]">
                 {role.title}
