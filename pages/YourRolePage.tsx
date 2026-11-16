@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PageSection from "../components/PageSection";
 import { ROLES_DATA } from "@/constants";
 
@@ -35,7 +36,9 @@ const YourRolePage: React.FC = () => {
 
               <ul className="mt-6 space-y-3 list-disc list-inside text-[var(--text-secondary)]">
                 {role.actions.map((action, i) => (
-                  <li key={i}>{action}</li>
+                  <li key={i}>
+                    {action.to ? <Link to={action.to} className="hover:text-[var(--text-accent)] hover:underline">{action.text}</Link> : action.text}
+                  </li>
                 ))}
               </ul>
             </div>

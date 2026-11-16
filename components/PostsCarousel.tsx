@@ -14,29 +14,32 @@ const PostsCarousel: React.FC<PostsCarouselProps> = ({ posts, onPostClick, title
   }
 
   return (
-    <div className="bg-[var(--background-tertiary)]">
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-8">{title}</h2>
-        <div className="flex overflow-x-auto space-x-8 pb-4 -mx-4 px-4">
+    <section>
+      <div className="max-w-7xl mx-auto py-12 md:py-14 px-4 sm:px-6 lg:px-8">
+        <div className="mb-5 flex items-baseline gap-3 border-b border-[rgba(74,58,40,0.15)] pb-2">
+          <h2 className="text-2xl font-extrabold tracking-tight text-[#111827]">{title}</h2>
+          <span className="text-sm text-[#6b5a45]">{posts.length} more</span>
+        </div>
+        <div className="flex overflow-x-auto gap-6 pt-2 pb-6 -mx-4 px-4 snap-x">
           {posts.map((post) => (
             <div
               key={post.id}
               onClick={() => onPostClick(post.id)}
-              className="flex-shrink-0 w-80 bg-[var(--background-card)] rounded-lg shadow-lg overflow-hidden cursor-pointer transform hover:-translate-y-2 transition-transform duration-300 group"
+              className="flex-shrink-0 w-72 sm:w-80 snap-start overflow-hidden cursor-pointer rounded-[10px] border border-white/60 bg-[rgba(255,255,255,0.35)] backdrop-blur-[3px] shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_8px_30px_rgba(74,58,40,0.10)] hover:-translate-y-1 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_14px_40px_rgba(74,58,40,0.18)] transition-all duration-300 group"
               role="button"
               tabIndex={0}
               onKeyPress={(e) => e.key === 'Enter' && onPostClick(post.id)}
             >
-              <img className="w-full h-40 object-cover" src={post.imageUrl} alt={post.title} />
+              <div className="overflow-hidden"><img className="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-105" src={post.imageUrl} alt={post.title} /></div>
               <div className="p-4">
-                <h3 className="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--text-accent)] transition-colors">{post.title}</h3>
-                <p className="mt-1 text-sm text-[var(--text-subtle)]">{post.date}</p>
+                <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#940d0d]">{post.date}</p>
+                <h3 className="mt-1 text-lg font-bold leading-snug text-[#111827] group-hover:text-[#940d0d] transition-colors">{post.title}</h3>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -72,7 +72,7 @@ const EducationalPostDetailPage: React.FC = () => {
 
   return (
     <>
-      <div className="bg-[var(--background-primary)] py-24 sm:py-24">
+      <div className="py-10 md:py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link to="/educational-posts" className="mb-8 text-[var(--text-accent)] hover:underline font-semibold flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" /></svg>
@@ -81,14 +81,14 @@ const EducationalPostDetailPage: React.FC = () => {
           
           
           <div className="mb-6">
-            <span className="inline-block bg-[var(--accent-bg)] text-[var(--accent-bg-text)] text-sm font-semibold mr-2 px-3 py-1 rounded-full">{post.category}</span>
+            <span className="inline-block mr-2 rounded-md border border-[rgba(74,58,40,0.2)] px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-[#3b2f22]">{post.category}</span>
           </div>
           <div className="flex justify-end mb-6">
-  <div className="flex bg-[var(--background-secondary)] rounded-full p-1 shadow-inner">
+  <div className="flex rounded-lg p-1 border border-white/60 bg-[rgba(255,255,255,0.35)] backdrop-blur-[3px] shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_4px_16px_rgba(74,58,40,0.08)]">
     
     <button
       onClick={() => setLang('en')}
-      className={`px-4 py-1.5 text-sm font-semibold rounded-full transition ${
+      className={`px-4 py-1.5 text-sm font-semibold rounded-md transition ${
         lang === 'en'
           ? 'bg-[var(--primary)] text-white shadow'
           : 'text-[var(--text-muted)] hover:text-[var(--text-primary)]'
@@ -99,7 +99,7 @@ const EducationalPostDetailPage: React.FC = () => {
 
     <button
       onClick={() => setLang('tr')}
-      className={`px-4 py-1.5 text-sm font-semibold rounded-full transition ${
+      className={`px-4 py-1.5 text-sm font-semibold rounded-md transition ${
         lang === 'tr'
           ? 'bg-[var(--primary)] text-white shadow'
           : 'text-[var(--text-muted)] hover:text-[var(--text-primary)]'
@@ -112,7 +112,7 @@ const EducationalPostDetailPage: React.FC = () => {
 </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-[var(--text-primary)] mb-4">{post.title}</h1>
           
-          <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center text-lg text-[var(--text-muted)] gap-x-8 gap-y-4 mb-8 border-y border-[var(--border-primary)] py-4">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center text-lg text-[var(--text-muted)] gap-x-8 gap-y-4 mb-8 border-y border-[rgba(74,58,40,0.15)] py-4">
             <div className="flex items-center space-x-3">
                 <svg className="w-6 h-6 text-[var(--primary)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
                 <span className="font-medium">{post.author}</span>
